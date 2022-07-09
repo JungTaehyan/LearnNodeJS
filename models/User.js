@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
     },
     image: String,
     token: {
-        type: toString
+        type: String
     },
     tokenExp: {
         type:Number //토큰 유효기간
