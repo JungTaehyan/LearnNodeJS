@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://jth9339:zheng9339@boilerplate.kfqtosn.mongodb.ne
   .catch(err => console.log(err))
 
 
-app.get('/', (req, res) => {res.send('Hello World! 안녕하세요lolololol')})
+app.get('/', (req, res) => {res.send('Hello World! 안녕하세요')})
 
 
 app.post('/register', (req, res) =>{
