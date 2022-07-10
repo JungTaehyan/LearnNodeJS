@@ -5,7 +5,10 @@ const app = express()
 const port = 5000
 // 포트 설정
 const bodyParser = require("body-parser");
+const config = require('./config/key');
+
 const { User } = require("./models/User");
+
 
 //application/x-www-form-urlencoded
 //이렇게 된 데이터를 분석할 수 있게 만듬
@@ -14,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://jth9339:zheng9339@boilerplate.kfqtosn.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect(config.mongoURI,{
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err))
